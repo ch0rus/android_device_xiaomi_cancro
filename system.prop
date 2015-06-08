@@ -1,8 +1,10 @@
+#
+# system.prop for cancro
+#
 ro.vendor.extension_library=libqti-perfd-client.so
 rild.libpath=/vendor/lib/libril-qc-qmi-1.so
 rild.libargs=-d /dev/smd0
 persist.radio.apm_sim_not_pwdn=0
-persist.sys.isUsbOtgEnabled=true
 
 #
 # system props for the cne module
@@ -16,12 +18,17 @@ mm.enable.qcom_parser=37491
 # VIDC: debug_levels
 # 1:ERROR 2:HIGH 4:LOW 0:NOLOGS 7:AllLOGS
 vidc.debug.level=1
+#
+# system props for the data modules
+#
+ro.use_data_netmgrd=true
+persist.data.netmgrd.qos.enable=true
+ro.data.large_tcp_window_size=true
 
 # System property for cabl
 ro.qualcomm.cabl=0
 ro.qcom.ad=1
 ro.qcom.ad.calib.data=/system/etc/calib.cfg
 
-ro.qc.sdk.sensors.gestures=true
-ro.qc.sdk.gestures.camera=false
-ro.qc.sdk.camera.facialproc=false
+#For specail cdma card sms issue
+persist.radio.force_on_dc=true
